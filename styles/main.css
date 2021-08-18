@@ -41,6 +41,10 @@ div {
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
+
 #nav {
   background-color: var(--bg-1);
   height: 80px;
