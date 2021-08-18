@@ -82,3 +82,40 @@ input[type="text"] {
   background-color: var(--bg-1);
   color: var(--fg-2);
 }
+input[type="submit"],
+button {
+  padding: 8px 22px;
+  background-color: var(--green-dark);
+  color: var(--fg-2);
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: ease 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+#cancelButton {
+  color: var(--red);
+  background-color: var(--bg-2);
+  border: 1px solid var(--red);
+}
+#cancelButton:hover {
+  color: var(--bg-0);
+  background-color: var(--red);
+}
+
+input[type="text"] {
+  background-color: var(--bg-0);
+  color: var(--fg-2);
+  outline: none;
+  transition: 0.3s;
+}
+input[type="text"]:focus {
+  border: 1px solid var(--bg-2);
+}
