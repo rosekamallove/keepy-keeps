@@ -6,5 +6,41 @@
     <title>Keepy Keeps</title>
     <link rel="stylesheet" href="styles/main.css" />
   </head>
-  <body></body>
+  <a>
+    <nav id="nav">
+      <div class="container" id="navContainer">
+        <h2 class="nav-header">Keepy Keeps</h2>
+        <a id="addBtn">+</a>
+      </div>
+    </nav>
+    <div class="panel" id="addLinksPanel">
+      <h3 class="panel-heading">Add Link</h3>
+      <form>
+        <input
+          type="text"
+          placeholder="Link Title"
+          name="title"
+          class="form-control"
+          id="lnikTitle"
+        />
+        <input
+          type="text"
+          placeholder="URL"
+          name="URL"
+          class="form-control"
+          id="URL"
+        />
+        <input
+          type="text"
+          placeholder="Categories (Comma Seperated)"
+          name="categories"
+          class="form-control"
+          id="categories"
+        />
+        <input type="submit" id="submitButton" value="Submit" />
+        <input type="submit" id="cancelButton" value="Cancel" />
+      </form>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>

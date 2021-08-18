@@ -8,7 +8,7 @@ let number = 0;
  * else print the number itself.
  */
 
-number = prompt("Enter the number");
+// number = prompt("Enter the number");
 
 for (let i = 0; i < 100; i++) {
   number = i;

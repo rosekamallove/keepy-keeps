@@ -1,3 +1,84 @@
-h2 {
-  color: yellow;
+:root {
+  --bg-0: #0d1117;
+  --bg-1: #161b22;
+  --bg-2: #21262d;
+  --fg-0: #89929b;
+  --fg-1: #c6cdd5;
+  --fg-2: #ecf2f8;
+  --orange: #faa356;
+  --green: #30b14a;
+  --green-dark: #238636;
+  --red: #ff6257;
+  --blue-light: #a2d2fb;
+  --blue-dark: #77bdfb;
+  --purple: #cea5fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-0);
+  color: var(--fg-0);
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg-0);
+}
+
+/** Margin : top right bottom down  */
+
+div {
+  margin: 10px 20px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#nav {
+  background-color: var(--bg-1);
+  height: 80px;
+  margin-bottom: 25px;
+}
+
+#navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.panel {
+  background-color: var(--bg-2);
+  padding: 40px 20px 20px 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.panel-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--fg-1);
+}
+
+.form-control {
+  width: 100%;
+  margin: 8px 0;
+  padding: 5px 15px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid var(--bg-0);
+  font-size: 14px;
+  color: var(--fg-0);
+}
+
+input[type="text"] {
+  background-color: var(--bg-1);
+  color: var(--fg-2);
 }
