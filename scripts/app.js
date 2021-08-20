@@ -32,6 +32,7 @@ addBtn.addEventListener("click", function () {
 });
 
 linkCategory.addEventListener("keydown", function (event) {
+  console.log(event.keyCode);
   if (event.keyCode === 188) {
     event.preventDefault();
     linkCategories.push(linkCategory.value);
@@ -63,7 +64,13 @@ submitButton.addEventListener("click", function (event) {
   displayLinks();
 });
 
-function displayLinkCategories() {}
+function displayLinkCategories() {
+  addedCategories.innerHTML = "";
+  for (let category of linkCategories) {
+    let categoryMarkup = `<span class="category">${category}</span>`;
+    addedCategories.innerHTML += categoryMarkup;
+  }
+}
 
 cancelButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -72,6 +79,9 @@ cancelButton.addEventListener("click", function (event) {
 
 function displayLinks() {
   linkList.innerHTML = "";
+  for (let i = 0; i < links.length; i++) {
+    console.log(links[i]);
+  }
   for (let link of links) {
     let markup = `
       <div class="panel link">
