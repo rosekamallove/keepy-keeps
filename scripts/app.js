@@ -25,10 +25,20 @@ let links = [
 ];
 let linkCategories = [];
 
+let editIndex = -1;
+
 displayLinks();
 
-addBtn.addEventListener("click", function () {
+function showAddLinkPanel() {
   linkPanel.classList.remove("hidden");
+  displayLinkCategories();
+}
+function hideAddLinkPanel() {
+  linkPanel.classList.add("hidden");
+}
+
+addBtn.addEventListener("click", function () {
+  showAddLinkPanel();
 });
 
 linkCategory.addEventListener("keydown", function (event) {
@@ -54,7 +64,13 @@ submitButton.addEventListener("click", function (event) {
     categories: linkCategories,
   };
 
-  links.push(newLink);
+  if (editIndex === -1) {
+    links.unshift(newLink);
+  } else {
+    links[editIndex] = newLink;
+    editIndex = -1;
+  }
+
   linkTitle.value = "";
   linkUrl.value = "";
   linkCategories = [];
@@ -74,20 +90,18 @@ function displayLinkCategories() {
 
 cancelButton.addEventListener("click", function (event) {
   event.preventDefault();
-  linkPanel.classList.add("hidden");
+  hideAddLinkPanel();
 });
 
 function displayLinks() {
   linkList.innerHTML = "";
-  for (let i = 0; i < links.length; i++) {
-    console.log(links[i]);
-  }
+  let index = 0;
   for (let link of links) {
     let markup = `
       <div class="panel link">
         <div class="link-options">
-          <button class="btn-sm">Edit</button>
-          <button class="btn-sm" id="cancelButton">Delete</button>
+          <button class="btn-sm" onclick=editLink(${index})>Edit</button>
+          <button class="btn-sm" id="cancelButton" onclick=deleteLink(${index})>Delete</button>
         </div>
         <a href=${link.url}>
           <div class="header">${link.title}</div>
@@ -100,5 +114,19 @@ function displayLinks() {
     }
     markup += "</div> </div>";
     linkList.innerHTML += markup;
+    index++;
   }
+}
+
+function deleteLink(index) {
+  links.splice(index, 1);
+  displayLinks();
+}
+
+function editLink(index) {
+  editIndex = index;
+  linkTitle.value = links[index].title;
+  linkUrl.value = links[index].url;
+  linkCategories = links[index].categories;
+  showAddLinkPanel();
 }
