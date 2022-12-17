@@ -160,3 +160,14 @@ input[type="text"]:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
+.add-button{
+  padding: 0.3rem 0.5rem;
+  background-color: #61AFEF;
+  border-radius: 1rem;
+  color: white;
+}
+.add-button:hover{
+  background-color: #2271b1;
+  transition: 0.2s;
+  cursor: pointer;
+}
